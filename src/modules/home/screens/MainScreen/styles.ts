@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { Text as DefaultText } from "react-native";
+import { ScrollView } from "react-native";
 import { SafeAreaView as SafeArea } from "react-native-safe-area-context";
-
-const Text = styled(DefaultText)`
-  font-size: 18px;
-  color: blue;
-  font-weight: 500;
-`;
+import { COLOR } from "_commons/colors";
 
 const SafeAreaView = styled(SafeArea)`
+  background-color: ${COLOR.darkGray};
   flex: 1;
-  background-olor: #191b1e;
 `;
 
-export { Text, SafeAreaView };
+const Container = styled(ScrollView)`
+  background-color: ${COLOR.darkGray};
+  flex: 1;
+`;
+
+export { SafeAreaView, Container };

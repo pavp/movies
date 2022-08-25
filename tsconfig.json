@@ -14,7 +14,15 @@
       "_components/*": ["src/components/*"],
       "_components": ["src/components"],
       "_modules/*": ["src/modules/*"],
-      "_modules": ["src/modules"]
+      "_modules": ["src/modules"],
+      "_services/*": ["src/services/*"],
+      "_services": ["src/services"],
+      "_commons/*": ["src/commons/*"],
+      "_commons": ["src/commons"],
+      "_navigation/*": ["src/navigation/*"],
+      "_navigation": ["src/navigation"],
+      "_models/*": ["src/models/*"],
+      "_models": ["src/models"]
     }
   }
 }
