@@ -17,7 +17,7 @@ const Home = () => {
     useGetMovies(GetMoviesType.GET_MOVIES_TOP_RATED);
 
   return (
-    <Container>
+    <Container testID="container">
       <SafeAreaView edges={["bottom"]}>
         <MoviesHorizontalCarrousel
           data={upcomingMovies?.results}

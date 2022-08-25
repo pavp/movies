@@ -1,5 +1,6 @@
-import React from "react";
-import { FlatList, View, Text, ActivityIndicator } from "react-native";
+import React, { useCallback } from "react";
+import { FlatList, View, ActivityIndicator } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Movie } from "_models/movie";
 
@@ -17,9 +18,11 @@ const MoviesHorizontalCarrousel = ({
   title,
   isLoading,
 }: IMoviesHorizontalCarrousel) => {
-  const handlePressItem = (id: number) => {
-    console.log("id", id);
-  };
+  const { navigate } = useNavigation();
+
+  const handlePressItem = useCallback((id: number) => {
+    navigate("Detail", { id });
+  }, []);
 
   const renderItem = ({ item }: { item: Movie }) => (
     <MovieItem item={item} handlePressMovie={handlePressItem} />
@@ -29,7 +32,7 @@ const MoviesHorizontalCarrousel = ({
     <View>
       <Title>{title}</Title>
       {isLoading ? (
-        <ActivityIndicator />
+        <ActivityIndicator testID={"indicator"} />
       ) : (
         <FlatList
           data={data}
@@ -37,6 +40,7 @@ const MoviesHorizontalCarrousel = ({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id.toString()}
+          testID={"data-list"}
         />
       )}
     </View>

@@ -13,9 +13,12 @@ interface IMovieItem {
 }
 
 const MovieItem = ({ item, handlePressMovie }: IMovieItem) => {
-  if (item?.poster_path || item?.backdrop_path)
+  if (item?.poster_path ?? item?.backdrop_path)
     return (
-      <TouchableOpacity onPress={() => handlePressMovie(item.id)}>
+      <TouchableOpacity
+        onPress={() => handlePressMovie(item.id)}
+        testID={"movie-onpress"}
+      >
         <Poster
           source={{
             uri: `https://image.tmdb.org/t/p/original${
@@ -28,7 +31,7 @@ const MovieItem = ({ item, handlePressMovie }: IMovieItem) => {
       </TouchableOpacity>
     );
 
-  return <View />;
+  return <View testID={"empty-view"} />;
 };
 
 export default MovieItem;

@@ -1,4 +1,6 @@
-import Adapter from "enzyme-adapter-react-16";
-import Enzyme from "enzyme";
+export const mockNavigate = jest.fn();
 
-Enzyme.configure({ adapter: new Adapter() });
+jest.mock("@react-navigation/native", () => ({
+  __esModule: true,
+  useNavigation: () => ({ navigate: mockNavigate }),
+}));

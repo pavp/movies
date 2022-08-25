@@ -5,6 +5,15 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { MainNavigator } from "_navigation/MainNavigator";
 
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList {
+      Home: undefined;
+      Detail: { id: number };
+    }
+  }
+}
+
 const queryClient = new QueryClient();
 
 const App = () => {
