@@ -19,13 +19,13 @@ const RequestTokenWebView = () => {
         }?redirect_to=https://www.google.com`,
       }}
       onNavigationStateChange={(navState) => {
-        const { url } = navState;
-        if (url.includes("approved=true")) {
+        const { url, canGoBack } = navState;
+        if (url.includes("approved=true") && canGoBack) {
           goBack();
           createSession();
           return;
         }
-        if (url.includes("denied=true")) goBack();
+        if (url.includes("denied=true") && canGoBack) goBack();
       }}
       testID="request-webview"
     />
