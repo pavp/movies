@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Text, View } from "react-native";
 
+import { COLOR } from "_commons/colors";
+
 const Container = styled(View)`
   font-size: 18px;
   color: blue;
@@ -9,7 +11,7 @@ const Container = styled(View)`
 
 const Title = styled(Text)`
   font-size: 16px;
-  color: white;
+  color: ${COLOR.white};
   font-weight: bold;
   margin: 16px;
 `;

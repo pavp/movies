@@ -53,7 +53,7 @@ describe("MoviesHorizontalCarrousel", () => {
   });
 
   it("should call handle press item", () => {
-    const { findAllByTestId, getAllByTestId } = render(
+    const { getAllByTestId } = render(
       <MoviesHorizontalCarrousel
         data={data}
         isLoading={isLoading}

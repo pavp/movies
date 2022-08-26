@@ -4,8 +4,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { MainScreen } from "_modules/home/screens/MainScreen";
 import { DetailScreen } from "_modules/detail-page/screens/DetailScreen";
 import { COLOR } from "_commons/colors";
+import { WishListButton } from "_components/WishListButton";
 
-const { Screen, Navigator } = createStackNavigator();
+import { HomeStackNavigatorParamList } from "../types";
+import { RightButtonContainer } from "./styles";
+
+const { Screen, Navigator } =
+  createStackNavigator<HomeStackNavigatorParamList>();
 
 const MainNavigator = () => {
   return (
@@ -21,20 +26,24 @@ const MainNavigator = () => {
           headerTitleStyle: {
             color: COLOR.white,
           },
+          headerRight: () => (
+            <RightButtonContainer>
+              <WishListButton handlePress={() => {}} />
+            </RightButtonContainer>
+          ),
         }}
       />
       <Screen
         name="Detail"
         component={DetailScreen}
         options={{
-          title: "Detail",
-          headerStyle: {
-            backgroundColor: COLOR.darkGray,
-          },
+          title: "",
           headerTitleStyle: {
             color: COLOR.white,
           },
           headerBackTitleVisible: false,
+          headerTransparent: true,
+          headerTintColor: COLOR.white,
         }}
       />
     </Navigator>
