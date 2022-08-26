@@ -5,6 +5,7 @@ import { MainScreen } from "_modules/home/screens/MainScreen";
 import { DetailScreen } from "_modules/detail-page/screens/DetailScreen";
 import { COLOR } from "_commons/colors";
 import { WishListButton } from "_components/WishListButton";
+import { RequestTokenWebView } from "_components/RequestTokenWebView";
 
 import { HomeStackNavigatorParamList } from "../types";
 import { RightButtonContainer } from "./styles";
@@ -44,6 +45,14 @@ const MainNavigator = () => {
           headerBackTitleVisible: false,
           headerTransparent: true,
           headerTintColor: COLOR.white,
+        }}
+      />
+      <Screen
+        name="WebView"
+        component={RequestTokenWebView}
+        options={{
+          title: "Webview",
+          headerBackTitleVisible: false,
         }}
       />
     </Navigator>

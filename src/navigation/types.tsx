@@ -6,14 +6,23 @@ export type HomeStackNavigatorParamList = {
   Detail: {
     id: number;
   };
+  WebView: {
+    token: string;
+  };
 };
 
 export type HomeScreenNavigationProp = StackScreenProps<
   HomeStackNavigatorParamList,
-  "Detail"
+  "Detail",
+  "Webview"
 >;
 
 export type DetailsScreenRouteProp = RouteProp<
   HomeStackNavigatorParamList,
   "Detail"
+>;
+
+export type WebViewScreenRouteProp = RouteProp<
+  HomeStackNavigatorParamList,
+  "WebView"
 >;

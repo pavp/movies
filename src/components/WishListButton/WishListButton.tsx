@@ -9,7 +9,7 @@ interface IWishListButton {
 
 const WishListButton = ({ handlePress }: IWishListButton) => {
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={handlePress} testID="wish-onpress">
       <Image
         source={require("_commons/images/wishlist.png")}
         style={{ height: 20, width: 20, tintColor: COLOR.white }}

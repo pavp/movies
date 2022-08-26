@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { MoviesHorizontalCarrousel } from "_components/MoviesHorizontalCarrousel";
 import { GetMoviesType } from "_models/general";
+import { SessionContext } from "_context/SessionContext";
 import useGetMovies from "_modules/home/hooks/useGetMovies";
 
 import { SafeAreaView, Container } from "./styles";
 
 const Home = () => {
+  const { session } = useContext(SessionContext);
+
   const { data: upcomingMovies, isLoading: isLoadingUpComingMovies } =
     useGetMovies(GetMoviesType.GET_MOVIES_UPCOMING);
 

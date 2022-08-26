@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Linking,
-  ActivityIndicator,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { Linking, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
 import { DetailsScreenRouteProp } from "_navigation/types";
