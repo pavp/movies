@@ -60,6 +60,7 @@ const MainNavigator = () => {
         options={{
           title: "Authentication",
           headerBackTitleVisible: false,
+          headerTintColor: COLOR.white,
         }}
       />
 
