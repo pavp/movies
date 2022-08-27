@@ -2,9 +2,10 @@ import React from "react";
 import { fireEvent, render } from "@testing-library/react-native";
 
 import { Movie } from "_models/movie";
+import { mockNavigate } from "_root/setup-tests";
+import { GetMoviesType } from "_models/general";
 
 import MoviesHorizontalCarrousel from "./MoviesHorizontalCarrousel";
-import { mockNavigate } from "_root/setup-tests";
 
 describe("MoviesHorizontalCarrousel", () => {
   const movie: Movie = {
@@ -14,6 +15,7 @@ describe("MoviesHorizontalCarrousel", () => {
   };
   const data: Movie[] = [movie];
   const title = "test";
+  const type = GetMoviesType.GET_MOVIES_POPULAR;
   let isLoading = false;
 
   beforeEach(() => {
@@ -26,6 +28,7 @@ describe("MoviesHorizontalCarrousel", () => {
         data={data}
         isLoading={isLoading}
         title={title}
+        type={type}
       />
     );
     expect(getAllByTestId("data-list")).toHaveLength(1);
@@ -38,6 +41,7 @@ describe("MoviesHorizontalCarrousel", () => {
         data={data}
         isLoading={isLoading}
         title={title}
+        type={type}
       />
     );
     expect(getByTestId("indicator")).toBeTruthy();
@@ -47,6 +51,7 @@ describe("MoviesHorizontalCarrousel", () => {
         data={data}
         isLoading={isLoading}
         title={title}
+        type={type}
       />
     );
     expect(queryByTestId("indicator")).toBeNull();
@@ -58,6 +63,7 @@ describe("MoviesHorizontalCarrousel", () => {
         data={data}
         isLoading={isLoading}
         title={title}
+        type={type}
       />
     );
     fireEvent.press(getAllByTestId("movie-onpress")[0]);

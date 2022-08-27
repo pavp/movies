@@ -7,6 +7,7 @@ import { Movie } from "_models/movie";
 
 import { MovieItemVertical } from "../MovieItemVertical";
 import { EmptyView } from "./styles";
+import { GetMoviesType } from "_models/general";
 
 interface IMoviesVerticalCarrousel {
   data: Movie[] | undefined;
@@ -20,7 +21,7 @@ const MoviesVerticalCarrousel = ({
   const { navigate } = useNavigation();
 
   const handlePressItem = useCallback((id: number | string) => {
-    navigate("Detail", { id });
+    navigate("Detail", { id, type: GetMoviesType.GET_MOVIES_POPULAR });
   }, []);
 
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {

@@ -6,7 +6,7 @@ import { postWishListItem } from "_services/post-wishlist-item";
 import { AddWishListItemResponse } from "_models/addWatchListItemResponse";
 import { SessionContext } from "_context/SessionContext";
 
-const useWishListItem = (mediaId: number) => {
+const useWishListItem = (mediaId: number | string) => {
   const { session } = useContext(SessionContext);
   const { mutate: addWishListItem } = useMutation<
     AddWishListItemResponse,

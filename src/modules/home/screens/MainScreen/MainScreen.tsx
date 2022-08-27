@@ -23,16 +23,19 @@ const Home = () => {
           data={upcomingMovies?.results}
           title={"Upcoming Movies"}
           isLoading={isLoadingUpComingMovies}
+          type={GetMoviesType.GET_MOVIES_UPCOMING}
         />
         <MoviesHorizontalCarrousel
           data={popularMovies?.results}
           title={"Popular Movies"}
           isLoading={isLoadingPopularMovies}
+          type={GetMoviesType.GET_MOVIES_POPULAR}
         />
         <MoviesHorizontalCarrousel
           data={topRatedMovies?.results}
           title={"Top Rated Movies"}
           isLoading={isLoadingRatedMovies}
+          type={GetMoviesType.GET_MOVIES_TOP_RATED}
         />
       </SafeAreaView>
     </Container>

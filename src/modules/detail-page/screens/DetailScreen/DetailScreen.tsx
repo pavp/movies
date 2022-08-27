@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Linking, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
@@ -21,7 +21,7 @@ import {
 
 const DetailScreen = () => {
   const route = useRoute<DetailsScreenRouteProp>();
-  const { id } = route.params;
+  const { id, type } = route.params;
   const { data, isLoading } = useGetMovieDetail(id);
   const { addWishListItem } = useWishListItem(id);
   const {
@@ -36,7 +36,9 @@ const DetailScreen = () => {
 
   const getGenres = genres
     ? genres.length > 0 && (
-        <Description>{genres.map((genre) => ` | ${genre.name}`)} </Description>
+        <Description type={type}>
+          {genres.map((genre) => ` | ${genre.name}`)}{" "}
+        </Description>
       )
     : null;
 
@@ -49,19 +51,20 @@ const DetailScreen = () => {
           <FadedPoster url={poster_path ?? backdrop_path} />
           <Container testID="container">
             <TitleContainer>
-              <Title>{title}</Title>
-              <WishListButton handlePress={addWishListItem} />
+              <Title type={type}>{title}</Title>
+              <WishListButton handlePress={addWishListItem} type={type} />
             </TitleContainer>
 
             <DetailsContainer>
-              <Description testID="release-date">
+              <Description testID="release-date" type={type}>
                 {release_date ? new Date(release_date).getFullYear() : null}
                 {getGenres}
               </Description>
             </DetailsContainer>
-            {overview ? <OverView>{overview}</OverView> : null}
+            {overview ? <OverView type={type}>{overview}</OverView> : null}
             {homepage ? (
               <HomePage
+                type={type}
                 onPress={() => Linking.openURL(homepage)}
                 testID={"homepage-link"}
               >
