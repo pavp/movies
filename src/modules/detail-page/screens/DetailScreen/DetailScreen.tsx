@@ -52,7 +52,9 @@ const DetailScreen = () => {
           <Container testID="container">
             <TitleContainer>
               <Title type={type}>{title}</Title>
-              <WishListButton handlePress={addWishListItem} type={type} />
+              {data ? (
+                <WishListButton handlePress={addWishListItem} type={type} />
+              ) : null}
             </TitleContainer>
 
             <DetailsContainer>

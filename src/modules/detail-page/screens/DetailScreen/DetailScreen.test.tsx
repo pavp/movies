@@ -77,4 +77,16 @@ describe("DetailScreen", () => {
     const image = await findByTestId("faded-poster-image");
     expect(image.props.source.uri).toContain(movie.backdrop_path);
   });
+
+  it("should not render icon when data is null", async () => {
+    spyGetMovieDetail.mockResolvedValueOnce(null);
+    const queryClient = new QueryClient();
+    const wrapper = ({ children }: any) => (
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    );
+    const { queryByTestId } = render(<DetailScreen />, {
+      wrapper,
+    });
+    await waitFor(() => expect(queryByTestId("wish-onpress")).toBeNull());
+  });
 });

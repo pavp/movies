@@ -11,6 +11,8 @@ import { ITextProps } from "./types";
 const SafeAreaView = styled(SafeArea)`
   background-color: ${COLOR.darkGray};
   flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Container = styled(ScrollView)`
