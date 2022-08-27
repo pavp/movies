@@ -1,8 +1,8 @@
 import React from "react";
 import { renderHook } from "@testing-library/react-hooks";
 import { waitFor } from "@testing-library/react-native";
-
 import { QueryClient, QueryClientProvider } from "react-query";
+
 import { RequestToken } from "_models/requestToken";
 import { mockNavigate } from "_root/setup-tests";
 

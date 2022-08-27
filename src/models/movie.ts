@@ -7,7 +7,7 @@ export interface Movie {
   budget?: number;
   genres?: Genre[];
   homepage?: string;
-  id: number;
+  id: number | string;
   imdb_id?: string;
   original_language?: string;
   original_title?: string;

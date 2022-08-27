@@ -3,7 +3,6 @@ import { renderHook } from "@testing-library/react-hooks";
 import { waitFor } from "@testing-library/react-native";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import { mockNavigate } from "_root/setup-tests";
 import { Session } from "_models/session";
 import { SessionContext } from "_context/SessionContext";
 
@@ -39,9 +38,7 @@ describe("useCreateSession", () => {
     await waitFor(() => result.current.createSession());
     expect(setSessionMock).toBeCalledWith(session.session_id);
   });
-});
 
-describe("useCreateSession", () => {
   it("should not set session when session_id is undefined", async () => {
     session.session_id = undefined;
     const setSessionMock = jest.fn();

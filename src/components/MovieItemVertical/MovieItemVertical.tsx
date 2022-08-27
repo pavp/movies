@@ -5,7 +5,7 @@ import { Movie } from "_models/movie";
 
 import { Poster } from "./styles";
 
-const windowHeight = Dimensions.get("window").height / 4;
+const windowWidth = Dimensions.get("window").width / 2 - 16;
 
 interface IMovieItem {
   item: Movie;
@@ -25,7 +25,7 @@ const MovieItem = ({ item, handlePressMovie }: IMovieItem) => {
               item.poster_path ?? item.backdrop_path
             }`,
           }}
-          style={{ height: windowHeight, aspectRatio: 2 / 3 }}
+          style={{ width: windowWidth, aspectRatio: 2 / 3, flex: 1 / 2 }}
           resizeMode={"cover"}
         />
       </TouchableOpacity>

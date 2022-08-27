@@ -4,17 +4,17 @@ import { StackScreenProps } from "@react-navigation/stack";
 export type HomeStackNavigatorParamList = {
   Home: undefined;
   Detail: {
-    id: number;
+    id: number | string;
   };
   WebView: {
     token: string;
   };
+  WishList: undefined;
 };
 
 export type HomeScreenNavigationProp = StackScreenProps<
   HomeStackNavigatorParamList,
-  "Detail",
-  "Webview"
+  "Detail"
 >;
 
 export type DetailsScreenRouteProp = RouteProp<

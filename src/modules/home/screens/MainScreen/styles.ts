@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ScrollView } from "react-native";
 import { SafeAreaView as SafeArea } from "react-native-safe-area-context";
+
 import { COLOR } from "_commons/colors";
 
 const SafeAreaView = styled(SafeArea)`

@@ -4,6 +4,7 @@ import { useRoute } from "@react-navigation/native";
 
 import { DetailsScreenRouteProp } from "_navigation/types";
 import { WishListButton } from "_components/WishListButton";
+import { useWishListItem } from "_hooks/useAddWishListItem";
 
 import useGetMovieDetail from "../../hooks/useGetMovies";
 import { FadedPoster } from "../../components/FadedPoster";
@@ -22,6 +23,7 @@ const DetailScreen = () => {
   const route = useRoute<DetailsScreenRouteProp>();
   const { id } = route.params;
   const { data, isLoading } = useGetMovieDetail(id);
+  const { addWishListItem } = useWishListItem(id);
   const {
     backdrop_path,
     poster_path,
@@ -48,7 +50,7 @@ const DetailScreen = () => {
           <Container testID="container">
             <TitleContainer>
               <Title>{title}</Title>
-              <WishListButton handlePress={() => {}} />
+              <WishListButton handlePress={addWishListItem} />
             </TitleContainer>
 
             <DetailsContainer>

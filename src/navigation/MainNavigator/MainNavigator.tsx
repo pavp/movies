@@ -1,11 +1,13 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/native";
 
 import { MainScreen } from "_modules/home/screens/MainScreen";
 import { DetailScreen } from "_modules/detail-page/screens/DetailScreen";
 import { COLOR } from "_commons/colors";
 import { WishListButton } from "_components/WishListButton";
 import { RequestTokenWebView } from "_components/RequestTokenWebView";
+import { WishListScreen } from "_modules/wish-list/screens/WishListScreen";
 
 import { HomeStackNavigatorParamList } from "../types";
 import { RightButtonContainer } from "./styles";
@@ -14,6 +16,7 @@ const { Screen, Navigator } =
   createStackNavigator<HomeStackNavigatorParamList>();
 
 const MainNavigator = () => {
+  const { navigate } = useNavigation();
   return (
     <Navigator>
       <Screen
@@ -29,7 +32,11 @@ const MainNavigator = () => {
           },
           headerRight: () => (
             <RightButtonContainer>
-              <WishListButton handlePress={() => {}} />
+              <WishListButton
+                handlePress={() => {
+                  navigate("WishList");
+                }}
+              />
             </RightButtonContainer>
           ),
         }}
@@ -51,8 +58,24 @@ const MainNavigator = () => {
         name="WebView"
         component={RequestTokenWebView}
         options={{
-          title: "Webview",
+          title: "Authentication",
           headerBackTitleVisible: false,
+        }}
+      />
+
+      <Screen
+        name="WishList"
+        component={WishListScreen}
+        options={{
+          title: "Wish Movies",
+          headerBackTitleVisible: false,
+          headerTintColor: COLOR.white,
+          headerStyle: {
+            backgroundColor: COLOR.darkGray,
+          },
+          headerTitleStyle: {
+            color: COLOR.white,
+          },
         }}
       />
     </Navigator>

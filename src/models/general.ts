@@ -6,9 +6,9 @@ enum GetMoviesType {
   GET_MOVIES_POPULAR = "/movie/popular",
 }
 
-type MovieListAnswer = {
+type MovieListResponse = {
   results: Movie[];
 };
 
 export { GetMoviesType };
-export type { MovieListAnswer };
+export type { MovieListResponse };

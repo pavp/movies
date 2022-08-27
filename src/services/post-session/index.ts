@@ -1,8 +1,8 @@
 import apiClient from "_services/api-client";
-import { CREATE_SESSION } from "../constants";
+import { API_CREATE_SESSION } from "../constants";
 
 export const postSession = async (requestToken: string) => {
-  const { data } = await apiClient.post(CREATE_SESSION, {
+  const { data } = await apiClient.post(API_CREATE_SESSION, {
     request_token: requestToken,
   });
   return data;

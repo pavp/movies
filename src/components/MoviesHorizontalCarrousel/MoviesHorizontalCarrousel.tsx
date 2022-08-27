@@ -20,7 +20,7 @@ const MoviesHorizontalCarrousel = ({
 }: IMoviesHorizontalCarrousel) => {
   const { navigate } = useNavigation();
 
-  const handlePressItem = useCallback((id: number) => {
+  const handlePressItem = useCallback((id: number | string) => {
     navigate("Detail", { id });
   }, []);
 
