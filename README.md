@@ -74,6 +74,8 @@ yarn test
 
 [Styled Components](https://styled-components.com/)
 
+[React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
+
 
 ## Author
 Pedro Villarreal
