@@ -1,4 +1,4 @@
-# Agile Movies
+# Movies
 
 Mobile app in React Native
 
