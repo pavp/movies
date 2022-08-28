@@ -54,7 +54,7 @@ In the project directory, run:
 yarn test
 ```
 
-Can use this test user (or create a new one) inside of the app: 
+Can use this test user (or create a new one) inside the app: 
 
 ```bash
 username: movietestpp
