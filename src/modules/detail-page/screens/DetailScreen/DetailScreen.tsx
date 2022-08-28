@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Linking, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
@@ -6,7 +6,7 @@ import { DetailsScreenRouteProp } from "_navigation/types";
 import { WishListButton } from "_components/WishListButton";
 import { useWishListItem } from "_hooks/useAddWishListItem";
 
-import useGetMovieDetail from "../../hooks/useGetMovies";
+import useGetMovieDetail from "../../hooks/useGetMovieDetail";
 import { FadedPoster } from "../../components/FadedPoster";
 import {
   SafeAreaView,
