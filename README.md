@@ -61,6 +61,11 @@ username: movietestpp
 password: 1234
 ```
 
+## .app / .apk / videos
+.app && .apk: https://drive.google.com/drive/folders/1UKLA_zYbIzoWYGH-UTlv_gXp6CUMxuDl?usp=sharing
+
+video: https://drive.google.com/file/d/1vDiinL5aO-qV_JWMfI_xC0EsvmXW2T8P/view?usp=sharing
+
 
 ## External libraries used
 
